@@ -3,7 +3,7 @@ function more(num){
 }
 
 function less(num){
-    return num--
+    return num-=1
 }
 
 const add=(num1,num2)=>{

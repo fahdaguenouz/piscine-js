@@ -7,10 +7,23 @@ const obj={
     undef:undefined
 }
 const nested={
-    arr:[4,undefined,'4'],
+    arr:[4,undefined,'2'],
     obj:{
         str:"piscine js",
         num:25,
         bool:false
     }
 }
+const DeepFreeze=(obj)=>{
+    
+    Object.keys(obj).forEach((p)=>{
+        if(!Object.isFrozen(obj[p])){
+            DeepFreeze(obj[p])
+        }
+    })
+    return Object.freeze(obj)
+}
+console.log(nested);
+DeepFreeze(nested)
+
+//console.log(nested);

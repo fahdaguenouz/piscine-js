@@ -15,7 +15,6 @@ const nested={
     }
 }
 const DeepFreeze=(obj)=>{
-    
     Object.keys(obj).forEach((p)=>{
         if(!Object.isFrozen(obj[p])){
             DeepFreeze(obj[p])
@@ -25,5 +24,6 @@ const DeepFreeze=(obj)=>{
 }
 console.log(nested);
 DeepFreeze(nested)
-
+Object.freeze(nested.obj)
+Object.freeze(nested.arr)
 //console.log(nested);

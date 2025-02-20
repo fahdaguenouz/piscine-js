@@ -118,9 +118,8 @@ function superTypeOf(data) {
     }else if(typeof data ==="function"){
         return 'Function'
     }
-
   
 }
 
 
-console.log(superTypeOf([]));
+//console.log(superTypeOf([]));

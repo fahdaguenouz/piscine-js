@@ -81,4 +81,4 @@ function slice(elem, start, end = elem.length) {
 
 }
 
-console.log(slice('abcdef', 0, -2));
+console.log(slice('abcdef', -2, ));

@@ -52,11 +52,9 @@ function divide(a,b){
 
 
 function modulo(a,b){
-    let res=0
     let div=divide(a,b)
     let num=multiply(div,b)
-    res=a-num
-    return res
+    return a-num
 
 }
 

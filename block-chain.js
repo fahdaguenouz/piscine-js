@@ -17,17 +17,17 @@ function blockChain(data ,prev = { index: 0, hash: "0" }){
 }
 
 
-// const hashCode = str =>
-//     (
-//       [...str].reduce((h, c) => (h = (h << 5) - h + c.charCodeAt(0)) & h, 0) >>> 0
-//     ).toString(36)
+const hashCode = str =>
+    (
+      [...str].reduce((h, c) => (h = (h << 5) - h + c.charCodeAt(0)) & h, 0) >>> 0
+    ).toString(36)
 
-    // const hs =blockChain({a:1})
+    const hs =blockChain({a:1})
  
-    // console.log(hs);
+    console.log(hs);
     
-    // const v=hs.chain({ hello: 'world' })
-    // console.log(v);
+    const v=hs.chain({ hello: 'world' })
+    console.log(v);
     
    
  //console.log();

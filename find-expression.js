@@ -5,7 +5,7 @@ function findExpression(num){
     const mul2 ="*2"
     n=n-4
     res+=add4
-    while(n>1){
+    while(n>=1){
         console.log(n);
         if(n%4==0&&n>4){
             n=n-4
@@ -16,6 +16,8 @@ function findExpression(num){
         }else if(n>4){
             n=n-4
             res+=add4
+        }else if(n=1){
+            return res
         }else {
             return undefined
         }
@@ -24,5 +26,5 @@ function findExpression(num){
 }
 
 
-console.log(findExpression(8));
+console.log(findExpression(60));
 

@@ -3,13 +3,7 @@ function flat(elem,num=1,arr=[]){
    
   for(let i=0;i<elem.length;i++){
     if(Array.isArray(elem[i])&&num>0){
-      
-        //  console.log(elem[i]);
-          
-          //console.log(c);
-
            flat(elem[i],num-1,arr)
-     
     }else{
      // console.log("f"+elem[i]);
       

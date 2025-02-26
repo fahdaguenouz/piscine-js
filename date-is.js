@@ -14,6 +14,30 @@ function isAfter(firstDate,secondDate){
     }
     return false
 }
+
+function isBefore(firstDate,secondDate){
+    if(firstDate<secondDate){
+        return true
+    }
+    return false
+}
+
+function isFuture(date){
+    let now=new Date()
+    if(isValid(date)&&(date-now)>0){
+        return true
+    }
+    return false
+}
+
+function isPast(date){
+    let now=new Date()
+    if(isValid(date)&&(date-now)<0){
+        return true
+    }
+    return false
+}
+
 console.log(new Date('2013-01-01'));
 
 

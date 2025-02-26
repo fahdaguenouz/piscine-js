@@ -18,12 +18,11 @@ function addWeek(input){
    let myear=new Date("0001-01-01")
    let day=new Date(input)
    let year=Math.floor((((day-myear)/(1000*60*60*24)))%14)
-   console.log(day);
+   console.log(day-year);
    console.log(Math.floor(((year))%14));
 
    return myDates[(year)]
 }
-
 function timeTravel(obj){
  
   
@@ -44,3 +43,5 @@ console.log(timeTravel({
   minute: 22,
   second: 22,
 }).toString());
+
+

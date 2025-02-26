@@ -1,14 +1,19 @@
 function firstDayWeek(weeks, years) {
-
+   
+    
     let year = new Date("01-01-0001")
     year.setFullYear(years)
-    console.log(year);
+   
     
     let week = (weeks * 7)
     year.setDate(week - 6)
+    console.log(week);
+    
     while (year.getDay() != 1 && year.getDate() != 1) {
         year.setDate(year.getDate() - 1)
+        console.log(year.getDay());
     }
+    
     let month = year.getMonth() + 1
     let day = year.getDate()
     day = check(day)

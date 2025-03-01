@@ -18,7 +18,6 @@ function firstDayWeek(weeks, years) {
     day = check(day)
     month = check(month)
     return day + "-" + month + "-" + years
-
 }
 function check(n) {
     if (n < 10) {

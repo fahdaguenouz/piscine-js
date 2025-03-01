@@ -6,18 +6,18 @@ function hasCity(country,cities){
             }
             
         }
-        return `${citie} is not city from ${country}`
+        return `${citie} is not a city from ${country}`
         
     }
 }
 
-const isFrench = hasCity('France', [
-    'Bordeaux',
-    'Paris',
-    'Lille',
-    'Lyon',
-    'Marseille',
-    'Saint-Étienne',
-  ])
-  console.log(isFrench('Lyos'));
+// const isFrench = hasCity('France', [
+//     'Bordeaux',
+//     'Paris',
+//     'Lille',
+//     'Lyon',
+//     'Marseille',
+//     'Saint-Étienne',
+//   ])
+//   console.log(isFrench('Lyos'));
   

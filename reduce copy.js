@@ -41,11 +41,11 @@ for(let i=arr.length-2;i>=0;i--){
 return last
 }
 
-// const num1= [3, 10, 26, 0]  
-// const str1= ['This ', 'is ', 'a ', 'simple ', 'example']
-// const ifOdd = (a, b) => (b % 2 === 0 ? a + 2 : a * 2)
-// const concatenate = (a = '', b) => a.concat(b)
-// const adder = (a, b) => a + b
-//  const str2= 'The quick brown fox jumped over the lazy dog'
-// //console.log(foldRight(str2, concatenate,'This is almost understandable. '));
-// console.log(reduceRight(num1, adder));
+const num1= [3, 10, 26, 0]  
+const str1= ['This ', 'is ', 'a ', 'simple ', 'example']
+const ifOdd = (a, b) => (b % 2 === 0 ? a + 2 : a * 2)
+const concatenate = (a = '', b) => a.concat(b)
+const adder = (a, b) => a + b
+ const str2= 'The quick brown fox jumped over the lazy dog'
+//console.log(foldRight(str2, concatenate,'This is almost understandable. '));
+console.log(reduceRight(num1, adder));

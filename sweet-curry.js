@@ -20,4 +20,4 @@ function sub4(a){
         }
     }
 }
-console.log(sub4(3)(72)(-211)(99));
+// console.log(sub4(3)(72)(-211)(99));

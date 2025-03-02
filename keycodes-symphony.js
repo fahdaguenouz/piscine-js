@@ -5,12 +5,12 @@ export function compose(){
         console.log("hihi",event);
         let alpha=event.key
         
-        if(alpha===alpha.toLocaleLowerCase()&&alpha!="Backspace"&&alpha!="Escape"){
+        if(alpha===alpha.toLocaleLowerCase()){
 
             const div=document.createElement("div")
             div.className="note"
             div.textContent=alpha
-            div.style.backgroundColor=`rgb(70,50,${event.keyCode})`
+            div.style.backgroundColor=`rgb(150,50,${event.keyCode})`
             document.body.appendChild(div)
             alpha=""
         }else if(alpha=="Backspace"){

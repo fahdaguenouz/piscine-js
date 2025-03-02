@@ -13,7 +13,8 @@ export function getArchitects(){
 export function getClassical(){
     
     const classical=document.getElementsByClassName("classical")
-    const nonclassical=document.querySelectorAll("a:not(.classical),span:not(.classical)")
+    const nonclassical=document.querySelectorAll(".classical")
+    console.log("lost ",nonclassical);
     let cal=convert(classical)
     let noncal=convert(nonclassical)
     console.log(cal,noncal);

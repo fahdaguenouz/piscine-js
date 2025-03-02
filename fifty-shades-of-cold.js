@@ -2,7 +2,6 @@ import { colors } from './fifty-shades-of-cold.data.js'
 export function generateClasses() {
     let bstyle = document.createElement("style")
     for (let color of colors) {
-
         let cll = `.${color}{
         background: ${color};
         }`

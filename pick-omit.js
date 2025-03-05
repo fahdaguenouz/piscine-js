@@ -1,19 +1,41 @@
-function pick(obj,data){
-let res={}
-    if(typeof data==="string"){
-        return obj[data]
-    }else{
-         res=data.map((e)=>{
-          res[String(e)]=  obj[e]
-          return res
-        })
-    }
-return res
-}
-let agent= {
-    firstName: 'James',
-    lastName: 'Bond',
-    age: 25,
-    email: 'jamesbond@hotmail.com',
+function pick(obj, data) {
+  const res = {};
+  
+  if (typeof data === 'string') {
+      if (obj.hasOwnProperty(data)) {
+          res[data] = obj[data];
+      }
+  } else {
+      data.forEach(key => {
+          if (obj.hasOwnProperty(key)) {
+              res[key] = obj[key];
+          }
+      });
   }
-console.log(pick(agent,['firstName', 'lastName']));
+  
+  return res;
+}
+
+function omit(obj, data) {
+  let res = {};
+
+  if (typeof data === "string") {
+    Object.keys(obj).forEach(key => {
+      if (key !== data) {
+        res[key] = obj[key];
+      }
+    });
+  } else {
+      for (let key in obj) {
+          if (!data.includes(key)) {  
+              res[key] = obj[key];
+          }
+      }
+  }
+
+  return res;
+}
+
+let language= { England: 'english', Spain: 'spanish', Portugal: 'portuguese' }
+console.log(omit(language,"Spain"));
+

@@ -20,54 +20,44 @@ export function moveCircle(){
         let bound=box.getBoundingClientRect()
         console.log(e.clientX,bound.left);
         
-        let inside=false
+        // let inside=false
         let last=Array.from(circles)
         last=last[circles.length-1]
         last.style.top=e.clientY-25+"px"
         last.style.left=e.clientX-25+"px"
-        let boundleft=bound.right-bound.left
-        let boundtop=bound.bottom-bound.top
+        // let boundleft=bound.right-bound.left
+        // let boundtop=bound.bottom-bound.top
         
 
-        if((bound.left<=e.clientX-25&& bound.right >= e.clientX+25 && bound.top <= e.clientY-25&& bound.bottom >= e.clientY+25  )){
-            last.style.backgroundColor="red"
-            box.appendChild(last)
+        if (!last.parentNode.classList.contains("box")) {
+            last.style.top = e.clientY - 25 + "px";
+            last.style.left = e.clientX - 25 + "px";
 
-            let maxleft=e.clientX-25
-            let maxtop=e.clientY-25
+            if (bound.left <= e.clientX - 25 && bound.right >= e.clientX + 25 && bound.top <= e.clientY - 25 && bound.bottom >= e.clientY + 25) {
+                box.appendChild(last);
+                last.style.backgroundColor = "var(--purple)";
 
-             maxleft=Math.max(bound.left,maxleft)
-             maxleft=Math.min(bound.right-50,maxleft)
-             maxtop=Math.max(bound.top,maxtop)
-             maxtop=Math.min(bound.bottom-50,maxtop)
+                let maxLeft = Math.max(bound.left + 25, e.clientX - 25);
+                let maxTop = Math.max(bound.top + 25, e.clientY - 25);
 
-            
-            last.style.top=maxtop+"px"
-            last.style.left=maxleft+"px"
-            last.style.color="white"
-            last.textContent=`left:${last.style.left}+top:${last.style.top}`
-            inside=true
-            
-          
-        }console.log(inside);
-            // if(inside&&(e.clientY>= bound.top&&e.clientY<=bound.bottom)){
-            // last.style.backgroundColor="purple"
-            // if(e.clientY==Math.trunc(bound)){
+                maxLeft = Math.min(bound.right - 25, maxLeft);
+                maxTop = Math.min(bound.bottom - 25, maxTop);
 
-            //     last.style.top=bound.top+"px"
-            // }
-           
-          
+                last.style.top = (maxTop - 25) + "px"; 
+                last.style.left = (maxLeft - 25) + "px"; 
+            }
+        } else { 
+            let boxLeft = bound.left ;
+            let boxTop = bound.top ;
+            let boxRight = bound.right - 50;
+            let boxBottom = bound.bottom -50;
 
-        // }
-        console.log('dsgnhugds' , bound)
-    
-        
-        console.log(last);
-        console.log(circles);
+            let circleLeft = Math.max(boxLeft, Math.min(e.clientX - 25, boxRight));
+            let circleTop = Math.max(boxTop, Math.min(e.clientY - 25, boxBottom));
 
-        
-
+            last.style.top = circleTop + "px";
+            last.style.left = circleLeft + "px";
+        }
     })
 }
 export function setBox(){

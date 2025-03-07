@@ -16,9 +16,14 @@ function mapKeys(obj, func) {
     return result;
 }
 
-function reduceKeys(obj, func, initialValue) {
-    return Object.keys(obj).reduce(func, initialValue);
+function reduceKeys(obj, func, init) {
+    let objj=Object.keys(obj)
+    if(typeof init==="undefined"){
+        init=Object.keys(obj)[0]
+        objj=objj.slice(1)
+    }
+    return objj.reduce(func, init);
 }
-const nutrients = { carbohydrates: 12, protein: 20, fat: 5 }
+//const nutrients = { carbohydrates: 12, protein: 20, fat: 5 }
 
-console.log(reduceKeys(nutrients, (acc, cr) => acc.concat(', ', cr)));
+//console.log(reduceKeys(nutrients, (acc, cr) => acc.concat(', ', cr)));

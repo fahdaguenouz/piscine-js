@@ -19,7 +19,7 @@ function pronoun(str){
         result[word].count++;
         if(words[i+1]){
 
-          if (!pronoun.includes(word[i+1].toLowerCase())) {
+          if (!pronoun.includes(words[i+1].toLowerCase())) {
             result[word].word.push(words[i+1].replace(/[,.!?;:]/g,""));
           }
         }

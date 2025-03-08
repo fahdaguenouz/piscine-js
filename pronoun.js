@@ -7,7 +7,7 @@ function pronoun(str){
     const pronoun = ["i", "you", "he", "she", "it", "they", "we"];
  
     for (let i = 0; i < words.length; i++) {
-      const word = words[i].toLowerCase().replace(/[,.!?;:]/g,"");
+      const word = words[i].toLowerCase().replace(/[,]/g,"");
       if (pronoun.includes(word)) {
         if (!result[word]) {
           result[word] = {
@@ -20,7 +20,7 @@ function pronoun(str){
         if(words[i+1]){
 
           if (!pronoun.includes(words[i+1].toLowerCase())) {
-            result[word].word.push(words[i+1].replace(/[,.!?;:]/g,""));
+            result[word].word.push(words[i+1].replace(/[,]/g,""));
           }
         }
       }
